@@ -6,7 +6,7 @@ export interface SmsServiceInterface {
     sendSms(
         params: SendSmsParams,
     ): Promise<SendSmsResponse | SendSmsErrorResponse>;
-    statusSms(
+    getSmsStatus(
         params: SmsStatusParams,
     ): Promise<SmsStatusResponse | SmsStatusErrorResponse>;
 }

@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { SmsService } from './sms.service';
 import { SmsController } from './sms.controller';
 import { HttpModule } from '@nestjs/axios';
+import { ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [HttpModule.register({
@@ -9,6 +10,6 @@ import { HttpModule } from '@nestjs/axios';
     maxRedirects: 5
   })],
   controllers: [SmsController],
-  providers: [SmsService],
+  providers: [SmsService, ConfigService],
 })
 export class SmsModule { }
